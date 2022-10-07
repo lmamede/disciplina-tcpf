@@ -1,0 +1,53 @@
+\documentclass{article}
+
+\usepackage[width=14cm, left=3cm, top=2cm]{geometry}
+
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\usepackage{multicol}
+
+\usepackage{ifthen}
+%\usepackage{minted}
+
+\newenvironment{exe-list}
+    {\newcounter{exe-list}
+    \newcommand{\itemlabel}[2]{\textbf{\large ##1\alph{exe-list}##2}}
+    \newcommand{\setitem}[2]{\setcounter{exe-list}{##1}\item[##2]}
+    \newcommand{\stepitem}[2]{\addtocounter{exe-list}{##1}\item[##2]}
+    \newcommand{\numitem}[1]{\setitem{##1}{\itemlabel{}{.}}}
+    \newcommand{\additem}[1]{\stepitem{##1}{\itemlabel{}{.}}}
+    \begin{list}{\itemlabel{}{.}}{\usecounter{exe-list}}}
+    {\end{list}}
+
+\newenvironment{exe}[2][Questão]
+    {\medskip\par\noindent\ifthenelse{\equal{#1}{}}
+        {\textbf{\large #2.}}
+        {\textbf{\large #1~#2.}}%
+    \medskip\par\noindent}
+    {\medskip}
+
+\newcommand{\alunoA}{Daniel Kiyoshi Hashimoto Vouzella de Andrade - 119025937}
+\newcommand{\alunoB}{Lorena Mamede - 1234567890}
+
+\title{Teoria de Categorias \& Programação Funcional}
+\author{\alunoA{} \and \alunoB}
+\date{Lista de Exercícios 1 - 2022.2}
+
+\begin{document}
+\maketitle
+
+\begin{exe}{1}
+    \begin{exe-list}
+        \item asdf
+        \numitem{2} qwre
+        \numitem{4} zxvc
+        \additem{2} hjkl
+    \end{exe-list}
+\end{exe}
+
+\end{document}
